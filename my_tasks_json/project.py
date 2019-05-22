@@ -37,17 +37,6 @@ def writer(filename, numbers):
     except Exception as ex:
         print(ex)
 
-
-def reader(filename):
-    import json
-    try:
-        with open(filename) as obj:
-            numbers = json.load(obj)
-        return numbers
-    except Exception as ex:
-        return ex
-
-
 def show():
     tasks = ""
     for task in todo:
@@ -61,7 +50,7 @@ def show():
 
 
 global todo
-todo = list(reader("my_tasks.json"))
+todo = list()
 
 window = tkinter.Tk()
 window.title("Менеджер задач")
